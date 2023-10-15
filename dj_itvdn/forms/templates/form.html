@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form from models</title>
+</head>
+<body>
+
+{% block form %}
+    {% if result_ok %}
+        <script>
+            alert({{result_ok}}!!!);
+        </script>
+    {% endif %}
+    <h1>Добавить автора</h1>
+    <form action="add-author/" method="post">
+        {% csrf_token %}
+        {{ form_for_author1.as_ul }}
+        <input type="submit" value="Submit">
+    </form>
+    <hr>
+    
+    <form action="add-authorarticle/" method="post">
+        {% csrf_token %}
+        {{ form_for_article.as_p }}
+        <input type="submit" value="Submit">
+    </form>
+    <hr>
+    {% comment %}
+        {% if erorrs %}
+        {% endif erorrs %}
+    {% endcomment %}
+
+    <h1>Контактная форма</h1>
+    <form action="/forms/" method="post">
+        {% csrf_token %}
+        {{form_contact.as_p}}
+        <input type="submit" value="Submit">
+    </form>
+    <hr>
+{% endblock form %}
+</body>
+</html>

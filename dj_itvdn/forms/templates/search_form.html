@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>search form</title>
+</head>
+<body>
+    <!-- <form action="/forms/search" method="get">
+        <input type="text" name="qw">
+        <input type="submit" value="Search">
+    </form> -->
+
+    <form action="/forms/file-input" method="post">
+        {% csrf_token %}
+
+        <label for="name">Name<input type="text" name='name'></label>
+        <br>
+        <label for="surname">surname<input type="text" name='surname'></label>
+        <br>
+        <label for="birth">date birth<input type="text" name='birth'></label>
+        <br>
+        <label for="male">male
+            <input type="radio" name="gender" value="male" id='male' >
+        </label>
+
+        <label for="female">female
+            <input type="radio" name="gender" value="female" id='female' >
+        </label>
+        <hr>
+        <button type="submit">Record in file</button>
+
+
+
+    </form>
+
+    
+</body>
+</html>

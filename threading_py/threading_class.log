@@ -1,0 +1,15 @@
+2020-05-11 12:03:24,571 - Mike - DEBUG - Calling doubler
+2020-05-11 12:03:24,571 - George - DEBUG - Calling doubler
+2020-05-11 12:03:24,571 - Mike - DEBUG - doubler function executing
+2020-05-11 12:03:24,572 - Wanda - DEBUG - Calling doubler
+2020-05-11 12:03:24,572 - George - DEBUG - doubler function executing
+2020-05-11 12:03:24,572 - Dingbat - DEBUG - Calling doubler
+2020-05-11 12:03:24,572 - Mike - DEBUG - doubler function ended with: 0
+2020-05-11 12:03:24,572 - Nina - DEBUG - Calling doubler
+2020-05-11 12:03:24,573 - Wanda - DEBUG - doubler function executing
+2020-05-11 12:03:24,573 - George - DEBUG - doubler function ended with: 2
+2020-05-11 12:03:24,573 - Dingbat - DEBUG - doubler function executing
+2020-05-11 12:03:24,573 - Nina - DEBUG - doubler function executing
+2020-05-11 12:03:24,573 - Wanda - DEBUG - doubler function ended with: 4
+2020-05-11 12:03:24,574 - Dingbat - DEBUG - doubler function ended with: 6
+2020-05-11 12:03:24,574 - Nina - DEBUG - doubler function ended with: 8

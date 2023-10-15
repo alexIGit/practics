@@ -1,0 +1,60 @@
+{% extends 'ajax.html' %}
+
+{% block javascript %}
+<script>
+  $(document).ready(function(){
+    console.log("Hi from register");
+    $('#id_email').on('blur', validate);
+
+    function validate(){
+      var email = $('#id_email').val();
+      console.log(email);
+      $.ajax({
+        method: 'GET',
+        url: '/ajax/validate-email',
+        data: {
+          'email': email
+        },
+        dataType: 'json',
+        success: function(data) {
+          console.log(data);
+
+          if (data.is_taken) {
+            $('#error-mail').text(data.is_taken);
+            $('#btn').attr('disabled', 'disabled');
+          }
+          else if (data.ok) {
+            $('#error-mail').text('');
+            $('#btn').removeAttr('disabled');
+          }
+        },
+        error: function(data) {
+          console.log(data);
+        }
+      })
+    }
+  })
+</script>
+{% endblock %}
+
+{% block login %}
+  <h2>from ajax</h2>
+  <form action="register" method="post">
+    {% csrf_token %}
+
+    {% for field in form %}
+      <div class="form-group">
+        <label for="">{{field.label}}</label>
+        <p>{{field}}</p>
+
+        {% if field.errors %}
+          <p>{{field.errors}}</p>
+        {% endif %}
+
+      </div>
+    {% endfor %}
+
+    <p id="error-mail"></p>
+    <button type="submit" id='btn'>Регистрация</button>
+  </form>
+{% endblock %}

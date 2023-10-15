@@ -1,0 +1,105 @@
+2021-02-04 17:56:13,329 INFO: Microblog startup [in /run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/app/routes.py:145]
+2021-02-04 17:56:22,327 INFO: Microblog startup [in /run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/app/routes.py:145]
+2021-02-04 17:56:52,652 INFO: Microblog startup [in /run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/app/routes.py:145]
+2021-02-04 21:22:29,920 INFO: Microblog startup [in /run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/app/routes.py:145]
+2021-02-04 21:22:45,046 INFO: Microblog startup [in /run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/app/routes.py:145]
+2021-02-04 21:22:48,895 INFO: Microblog startup [in /run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/app/routes.py:145]
+2021-02-04 21:22:51,408 INFO: Microblog startup [in /run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/app/routes.py:145]
+2021-02-04 21:30:26,350 INFO: Microblog startup [in /run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/app/routes.py:145]
+2021-02-04 21:30:29,678 INFO: Microblog startup [in /run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/app/routes.py:145]
+2021-02-04 21:30:32,525 INFO: Microblog startup [in /run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/app/routes.py:145]
+2021-02-04 21:42:35,988 INFO: Microblog startup [in /run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/app/routes.py:145]
+2021-02-04 21:42:39,469 INFO: Microblog startup [in /run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/app/routes.py:145]
+2021-02-04 21:42:42,753 INFO: Microblog startup [in /run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/app/routes.py:145]
+2021-02-04 21:45:59,350 INFO: Microblog startup [in /run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/app/routes.py:145]
+2021-02-04 21:46:16,803 ERROR: Exception on /login [POST] [in /run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/env/lib/python3.9/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/env/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/env/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/env/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/env/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/env/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/env/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/app/routes.py", line 47, in login
+    if not next_page or url_parse(next_page).netcol != '':
+AttributeError: 'URL' object has no attribute 'netcol'
+2021-02-04 21:47:03,810 ERROR: Exception on /user/editor1 [GET] [in /run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/env/lib/python3.9/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/env/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/env/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/env/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/env/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/env/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/env/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/env/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/app/routes.py", line 85, in user
+    return render_template('user.html', user=user, posts=posts)
+  File "/run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/env/lib/python3.9/site-packages/flask/templating.py", line 137, in render_template
+    return _render(
+  File "/run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/env/lib/python3.9/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/env/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/env/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/env/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/app/templates/user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/app/templates/base.html", line 33, in top-level template code
+    {% block content %}{% endblock %}
+  File "/run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/app/templates/user.html", line 17, in block "content"
+    {{ form.hidden_tag() }}
+  File "/run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/env/lib/python3.9/site-packages/jinja2/environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'form' is undefined
+2021-02-04 21:48:21,783 ERROR: Exception on /user/editor123 [GET] [in /run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/env/lib/python3.9/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/env/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/env/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/env/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/env/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/env/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/env/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/env/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/app/routes.py", line 85, in user
+    return render_template('user.html', user=user, posts=posts)
+  File "/run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/env/lib/python3.9/site-packages/flask/templating.py", line 137, in render_template
+    return _render(
+  File "/run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/env/lib/python3.9/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/env/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/env/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/env/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/app/templates/user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/app/templates/base.html", line 33, in top-level template code
+    {% block content %}{% endblock %}
+  File "/run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/app/templates/user.html", line 17, in block "content"
+    {{ form.hidden_tag() }}
+  File "/run/media/ine/1B6EC43665352BA7/yandex/web_info/flask/env/lib/python3.9/site-packages/jinja2/environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'form' is undefined

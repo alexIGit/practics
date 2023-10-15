@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration</title>
+  <style>
+    body {
+      padding-top: 50px;
+      padding-left: auto;
+      padding-right: 10px;
+    }
+    a {
+      margin-top: 50px;
+      margin-left: 10px;
+      padding: 0.5em;
+      border: 5px solid pink;
+      border-radius: 5px;
+      color: black;
+
+    }
+    a:hover {
+      border-radius: 10px;
+      background-color: yellow;
+    }
+    .form-group {
+      background-color: lightcoral;
+      border: 5px solid crimson;
+      border-radius: 25px;
+      text-align: center;
+    }
+    .block-login {
+      background-color: rgb(139, 128, 240);
+      border: 5px solid rgb(20, 220, 210);
+      border-radius: 25px;
+      display: block;
+      width: 250px;
+      min-height: 200px;
+    }
+    #error-mail{
+      color: red;
+    }
+  </style>
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+</head>
+<body>
+  <h1>Hello ajax!!!</h1>
+  {% if user.is_authenticated %}
+    <a href="logout">выйти ({{user.username}})</a>
+  {% else %}
+    <a href="register">Регистрация на сайте</a>
+    <a href="login">Авторизация</a>
+  {% endif %}
+
+  <div class="block-login">{% block login %}{% endblock %}</div>
+
+  {% if user.is_authenticated %}
+
+  <a href="show-three" id="show-three">Показать первые 3 записи</a>
+  <a href="show-four" id="show-four">Показать первые 4 записи</a>
+
+    <table id="table_id" border='1' cellpadding='5px'>
+      <tr style="background-color: brown; color: wheat;">
+        <td>имя</td>
+        <td>Фам</td>
+        <td>Дата</td>
+        <td>Компания</td>
+        <td>Должность</td>
+        <td>Язык</td>
+        <td>ЗП</td>
+      </tr>
+      {% for el in humans %}
+        <tr>
+          <td>{{el.name}}</td>
+          <td>{{el.surname}}</td>
+          <td>{{el.birth}}</td>
+          <td>{{el.company}}</td>
+          <td>{{el.position}}</td>
+          <td>{{el.language}}</td>
+          <td>{{el.salary}}</td>
+        </tr>
+      {% endfor %}
+    </table>
+
+    <form action="add-human" method="post" id="add-human">
+    {% csrf_token %}
+      {% for field in human_form %}
+        <label for="">{{field.label}}</label>
+        <p>{{field}}</p>
+      {% endfor %}
+
+      <button type="submit">Добавить в таблицу</button>
+    </form>
+
+  {% endif %}
+
+  {% block javascript%} {% endblock %}
+
+  <script>
+    $(document).ready(function() {
+      function ajax_setup(e) {
+        // e.preventDefault();
+        e.preventDefault();
+        $.ajax({
+          method: 'GET',
+          url: $(this).attr('href'),
+          data: "",
+          dataType: 'json',
+          success: function(data) {
+            // console.log(data);
+            var arr_lenght = data.elements.length;
+            console.log(arr_lenght);
+            $("#table_id tr:not(:first-child)").remove();
+
+            for(var i = 0; i < arr_lenght; i++) {
+              var table_row = `
+              <tr>
+                <td>${data.elements[i].surname}</td>
+                <td>${data.elements[i].name}</td>
+                <td>${data.elements[i].birth}</td>
+                <td>${data.elements[i].company}</td>
+                <td>${data.elements[i].position}</td>
+                <td>${data.elements[i].language}</td>
+                <td>${data.elements[i].company}</td>
+              </tr>
+              `
+              $('table').append(table_row);
+            }
+          }
+        });
+      }
+
+      $('#show-three').click(ajax_setup);
+      $('#show-four').click(ajax_setup);
+    });
+  </script>
+
+<script>
+  $(document).ready(function() {
+    function add_human(e) {
+      // e.preventDefault();
+      e.preventDefault();
+      $.ajax({
+        method: 'POST',
+        url: $(this).attr('action'),
+        data: {
+          'name': $('#id_name').val(),
+          'surname': $('#id_surname').val(),
+          'birth': $('#id_birth').val(),
+          'company': $('#id_company').val(),
+          'position': $('#id_position').val(),
+          'language': $('#id_language').val(),
+          'salary': $('#id_salary').val(),
+        },
+        dataType: 'json',
+        success: function(data) {
+          console.log(data);
+
+          $('form')[0].reset();
+
+            var table_row = `
+            <tr>
+              <td>${data.name}</td>
+              <td>${data.surname}</td>
+              <td>${data.birth}</td>
+              <td>${data.company}</td>
+              <td>${data.position}</td>
+              <td>${data.language}</td>
+              <td>${data.salary}</td>
+            </tr>
+            `
+            $('table').append(table_row);
+        }
+      });
+    }
+
+    $('#add-human').submit(add_human);
+  });
+</script>
+</body>
+</html>

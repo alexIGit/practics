@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration</title>
+  <style>
+    body {
+      padding-top: 50px;
+      padding-left: auto;
+      padding-right: 10px;
+    }
+    a {
+      margin-top: 50px;
+      margin-left: 10px;
+      padding: 0.5em;
+      border: 5px solid pink;
+      border-radius: 5px;
+      color: black;
+
+    }
+    a:hover {
+      border-radius: 10px;
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  {% if user.is_authenticated %}
+    <a href="logout">выйти ({{user.username}})</a>
+  {% else %}
+    <a href="register">Регистрация на сайте</a>
+    <a href="login">Авторизация</a>
+  {% endif %}
+
+  {% for elem in humans %}
+    <p>{{elem.name}} {{elem.surname}} {{elem.company}}</p>
+  {% endfor %}
+</body>
+</html>
