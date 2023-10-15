@@ -1,5 +1,14 @@
+# python
 **/__pycache__/
+**/migrations/
 env/
 **/env/
+
+
 **/shame/
 **/shame*
+
+# node
+**/node_modules/
+**/public/
+**/.git/
