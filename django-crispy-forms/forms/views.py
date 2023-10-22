@@ -34,3 +34,12 @@ class AddressFormView1(generic.TemplateView):
       'form': self.form_contact,
     }
     return render(request, 'index1.html', context)
+
+class AddressFormView2(generic.TemplateView):
+  form_contact = AddressForm
+  def get(self, request):
+    context = {
+      'form': self.form_contact,
+    }
+    return render(request, 'index-helper.html', context)
+
