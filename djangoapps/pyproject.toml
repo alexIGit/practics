@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "djangoapps"
+version = "0.1.0"
+description = "Изучение django"
+authors = ["alexIGit <toevilhell@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^4.2.7"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
