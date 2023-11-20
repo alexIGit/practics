@@ -1,0 +1,5 @@
+#!/bin/bash
+source path/to/env/bin/activate
+exec gunicorn -c "path/to/gunicorn_config.py" app.wsgi	
+
+#app.wsgi -> app - django-admin startproject <app>
