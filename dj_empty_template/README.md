@@ -5,11 +5,11 @@ pip install -U pip
 pip install django
 pip freeze > requirements.txt
 
-# settings
+# configure
 django-admin startproject <name:app> .
 pytho manage.py startapp <name:first>
 
-# settings gunicorn
+# configure gunicorn
 pip install gunicorn
 ...
 sudo chmod +x bin/start_gunicorn.sh
@@ -17,7 +17,7 @@ sudo chmod +x bin/start_gunicorn.sh
 
 check 127.0.0.1:8001	in browser
 
-#setings nginx
+#configure nginx
 vim /etc/nginx/sites-enabled/default?
 ln -l ... 
 or edit nginx settings: nginx.conf?
@@ -38,4 +38,22 @@ server {
 }
 --
 ./bin/start_gunicorn.sh
+check <ip: ip a> 	in browser
+
+# configure supervisor
+install [supervisor] from linux package manager	
+
+/etc/supervisord.conf
+--
+[program:gunicorn]
+command=path/to/bin/start_gunicorn.sh
+user=www
+process_name=%(program_name)s
+directory=/path/to/project
+numproc=1
+autostart=1
+autorestart=1
+redirect_stderr=true
+--
+systemctl restart supervisord.service
 check <ip: ip a> 	in browser
