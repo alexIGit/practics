@@ -16,3 +16,4 @@ env/
 #private data
 dj_empty_template/gunicorn_config.py
 dj_empty_template/bin/start_gunicorn.sh
+**/srv/

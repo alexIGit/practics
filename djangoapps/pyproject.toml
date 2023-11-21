@@ -8,6 +8,9 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.11"
 django = "^4.2.7"
+django-extensions = "^3.2.3"
+werkzeug = "^3.0.1"
+pyopenssl = "^23.3.0"
 
 
 [build-system]
